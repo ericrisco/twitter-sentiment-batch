@@ -51,14 +51,14 @@ ENCODER_MODEL = "encoder.pkl"
 def generate_word2vec(train_df):
     documents = [_text.split() for _text in train_df.text.values]
     w2v_model = gensim.models.word2vec.Word2Vec(
-        size=W2V_SIZE,
+        vector_size=W2V_SIZE,
         window=W2V_WINDOW,
         min_count=W2V_MIN_COUNT,
         workers=mp.cpu_count(),
     )
     w2v_model.build_vocab(documents)
 
-    words = w2v_model.wv.vocab.keys()
+    words = w2v_model.wv.index_to_key
     vocab_size = len(words)
     logging.info(f"Vocab size: {vocab_size}")
     w2v_model.train(documents, total_examples=len(documents), epochs=W2V_EPOCH)
