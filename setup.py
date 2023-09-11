@@ -1,7 +1,7 @@
 import setuptools
 
 REQUIRED_PACKAGES = [
-    "apache-beam[gcp]==2.24.0",
+    "apache-beam[gcp]",
     "tensorflow==2.8.0",
     "gensim==3.6.0",
     "fsspec==0.8.4",
