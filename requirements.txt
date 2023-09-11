@@ -1,5 +1,5 @@
 apache-beam
-apache-beam[gcp]==2.24.0
+apache-beam[gcp]
 tensorflow
 gensim==3.6.0
 fsspec==0.8.4
